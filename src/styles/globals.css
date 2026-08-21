@@ -1,0 +1,408 @@
+/* ===================================================
+   DISTILIO — Premium Light Professional Design System
+   Rich Slide-Specific Background Imagery · Enhanced Background Visibility · Zero Text Impact
+=================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Color Palette - Premium Light Professional Palette */
+  --bg-main:          #F1F5F9;
+  --bg-surface:       #FFFFFF;
+  --bg-alt:           #E2E8F0;
+  --bg-card:          rgba(255, 255, 255, 0.96);
+
+  --text-heading:     #0F172A;
+  --text-body:        #334155;
+  --text-muted:       #64748B;
+
+  --accent-blue:      #2563EB;
+  --accent-cyan:      #0284C7;
+  --accent-teal:      #0D9488;
+  --accent-soft:      #EFF6FF;
+
+  --border-subtle:    #CBD5E1;
+  --border-card:      #94A3B8;
+  --border-focus:     #60A5FA;
+
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* ─── APP LAYOUT ─── */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─── SLEEK LIGHT NAVBAR ─── */
+.top-navbar {
+  height: 64px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: var(--text-heading);
+  text-decoration: none;
+}
+
+.brand-badge {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+}
+
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-category-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-category-btn:hover {
+  color: var(--text-heading);
+  background: var(--bg-alt);
+}
+
+.nav-category-btn.active {
+  color: var(--accent-blue);
+  background: var(--accent-soft);
+  border-color: rgba(37, 99, 235, 0.3);
+  font-weight: 700;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-ctrl-btn {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-heading);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-ctrl-btn:hover {
+  background: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+/* ─── MAIN SLIDE SCROLL AREA ─── */
+/* ─── MAIN SLIDE SCROLL AREA ─── */
+.slide-scroll-area {
+  flex: 1;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+.slide-scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slide-scroll-area::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+.slide-scroll-area::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+  border-radius: 4px;
+}
+
+.slide-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* ─── LIGHT SLIDE PANEL ─── */
+.slide-panel {
+  min-height: calc(100vh - 64px);
+  height: calc(100vh - 64px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimized background image layer for 60fps scrolling */
+.slide-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+  transform: translateZ(0);
+}
+
+.slide-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(241, 245, 249, 0.25) 0%, var(--bg-main) 82%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.slide-content-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── PUNCHY LIGHT TYPOGRAPHY ─── */
+.slide-title-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--text-heading);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.slide-title-hero span {
+  color: var(--accent-blue);
+}
+
+.slide-subtitle {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+  color: #1E293B;
+  line-height: 1.55;
+  max-width: 840px;
+  margin-bottom: 1.6rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* ─── CARDS & GRIDS (HIGH PERFORMANCE OPAQUE CARDS FOR ZERO-LAG SCROLLING) ─── */
+.grid-cards-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.35rem;
+}
+
+.grid-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.grid-cards-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.light-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.35rem;
+  box-shadow: 0 6px 24px -2px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  will-change: transform;
+  transform: translateZ(0);
+  position: relative;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.light-card:hover {
+  border-color: var(--border-focus);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px -4px rgba(37, 99, 235, 0.15);
+}
+
+.light-card-accent {
+  background: linear-gradient(135deg, #FFFFFF, #EFF6FF);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.card-image-box {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ─── STAT CALLOUT NUMBERS (RESPONSIVE FIT) ─── */
+.big-stat-val {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--accent-blue);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.big-stat-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.big-stat-desc {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ─── TAG BADGES ─── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-heading);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+}
+
+.tag-blue {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+  color: var(--accent-blue);
+}
+
+.tag-teal {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
+  color: var(--accent-teal);
+}
+
+/* ─── HYPERLINK BUTTON ─── */
+.poc-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--accent-blue);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+}
+
+.poc-link-btn:hover {
+  background: #1D4ED8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ─── FLOATING FOOTER STATUS BAR ─── */
+.bottom-status-bar {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.8rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  padding: 0.45rem 1rem;
+  border-radius: 99px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.bottom-status-bar span {
+  color: var(--accent-blue);
+}
