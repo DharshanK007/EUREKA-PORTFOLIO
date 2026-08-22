@@ -13,37 +13,35 @@ const S05Solution: React.FC = () => {
       bgImage="/images/network_flow.png"
     >
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 0.95fr', gap: '1.25rem', alignItems: 'stretch' }}>
-        {/* Traditional Approach Box */}
+        {/* Existing Technologies Column */}
         <div className="light-card" style={{ borderColor: 'rgba(239, 68, 68, 0.35)', background: '#FEF2F2' }}>
           <div className="tag" style={{ color: '#DC2626', borderColor: 'rgba(239, 68, 68, 0.35)', marginBottom: '0.65rem' }}>
-            WHAT CURRENT TECH LACKS
+            EXISTING TECHNOLOGIES
           </div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-heading)', marginBottom: '0.65rem' }}>
-            Traditional Accumulation
+            Reactive Storage Policies
           </h3>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.45rem', color: '#7F1D1D', fontSize: '0.82rem', fontWeight: 500 }}>
-            <li>❌ <strong>Blind Ingestion:</strong> Dumps 100% of raw stream noise into cloud storage without checking value</li>
-            <li>❌ <strong>Post-Ingest Lag:</strong> Tries to manage costs <em>after</em> expensive cloud retention bills accumulate</li>
-            <li>❌ <strong>Content Ignorance:</strong> Treats critical risk signals and &gt;80% baseline noise with identical priority</li>
-            <li>❌ <strong>Linear Cost Drag:</strong> Forces hardware & cloud storage scaling to double every 18 months</li>
-            <li>❌ <strong>Sluggish Analytics:</strong> Forces AI pipelines & SQL queries to search through bloated noise</li>
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.55rem', color: '#7F1D1D', fontSize: '0.82rem', fontWeight: 500 }}>
+            <li>• <strong>Indiscriminate Ingestion:</strong> Existing cloud platforms (AWS, Snowflake, Azure) dump 100% of raw data streams into disk before evaluation.</li>
+            <li>• <strong>Post-Storage Management:</strong> Lifecycle rules try to tier or archive data <em>after</em> expensive cloud retention bills have already accumulated.</li>
+            <li>• <strong>Metadata-Only Rules:</strong> FinOps tools optimize strictly using static file age or access logs, completely blind to business relevance.</li>
+            <li>• <strong>Compounding Cost & Lag:</strong> Linear hardware scaling creates storage bloat and slows downstream database & AI query performance.</li>
           </ul>
         </div>
 
-        {/* Distilio Approach Box */}
+        {/* Distilio Solution Column */}
         <div className="light-card light-card-accent" style={{ border: '2px solid var(--accent-blue)' }}>
           <div className="tag tag-teal" style={{ marginBottom: '0.65rem' }}>
-            HOW DISTILIO SOLVES IT
+            DISTILIO PROPOSED ENGINE
           </div>
           <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-heading)', marginBottom: '0.65rem' }}>
-            Distilio Pre-Ingest Engine
+            Pre-Ingest Relevance Gate
           </h3>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.45rem', color: 'var(--text-heading)', fontSize: '0.82rem', fontWeight: 600 }}>
-            <li>⚡ <strong>Pre-Ingestion Stream Gate:</strong> Scores & prunes data streams <em>in-flight</em> before entering storage</li>
-            <li>⚡ <strong>Domain-Native Intelligence:</strong> Applies objective relevance indicators (RM-NPI) to prioritize key data</li>
-            <li>⚡ <strong>Dual-Channel Safety:</strong> Guarantees 100% anomaly retention while compressing &gt;80% noise</li>
-            <li>⚡ <strong>Adaptive Stream Tiering:</strong> Routes high-value signals to hot storage & routine data to cold tiers</li>
-            <li>⚡ <strong>Accelerated Compute:</strong> Delivers 3x–10x faster query execution & AI pipeline throughput</li>
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.55rem', color: 'var(--text-heading)', fontSize: '0.82rem', fontWeight: 600 }}>
+            <li>• <strong>In-Stream Evaluation:</strong> Scores & prunes data streams <em>in-flight</em> before entering cloud data warehouses.</li>
+            <li>• <strong>Domain-Native Intelligence:</strong> Applies objective business indicators to separate high-value risk signals from routine noise.</li>
+            <li>• <strong>Dual-Channel Preservation:</strong> Guarantees 100% anomaly & critical event retention while compressing over 80% baseline noise.</li>
+            <li>• <strong>Downstream Acceleration:</strong> Reduces cloud storage footprints by 40%–70% and speeds up AI & analytics compute by 3x–10x.</li>
           </ul>
         </div>
 
@@ -62,9 +60,9 @@ const S05Solution: React.FC = () => {
             Decides storage tier and compute priority before ingestion into cloud data warehouses.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', fontSize: '0.78rem', color: 'var(--accent-blue)', fontWeight: 600, borderTop: '1px solid var(--border-subtle)', paddingTop: '0.5rem' }}>
-            <span>• Pre-Ingest In-Flight Filtering</span>
-            <span>• Zero Anomaly Blind-Spots</span>
-            <span>• 40%–70% Cloud Storage Savings</span>
+            <span>• Pre-Ingestion In-Flight Filtering</span>
+            <span>• Guaranteed Anomaly Preservation</span>
+            <span>• 40%–70% Cloud Storage Reduction</span>
           </div>
         </div>
       </div>
